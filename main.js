@@ -18,7 +18,8 @@ display(input);
 
 function display(number) {
     document.write(`
-    <p>${number} is equivalent to ${number} in Hexidacimal <br>
-    and ${number} is also equivalent to ${number} in octal</p>
+    <p>${number} is equivalent to ${number.toString(16)} in Hexidacimal <br>
+    and ${number} is also equivalent to ${number.toString(8)} in Octal <br>
+    while ${number} is also equivalent to ${number.toString(2)} in Binary</p>
     `);
 }
