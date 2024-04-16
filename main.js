@@ -7,3 +7,18 @@ Design a Web Page that will let the user input any number. Using Javascript Func
 // 2:binary
 // 8:Octal
 // 16:Hexidacimal
+
+let input = NaN;
+
+for (let i = 0; isNaN(input); i++) {
+   input = parseFloat(prompt("Type a valid number"));
+}
+
+display(input);
+
+function display(number) {
+    document.write(`
+    <p>${number} is equivalent to ${number} in Hexidacimal <br>
+    and ${number} is also equivalent to ${number} in octal</p>
+    `);
+}
