@@ -1,4 +1,8 @@
-let input = parseFloat(prompt("Type a valid number"));
+let input = -1;
+
+for(let i = 0; input < 0 || input !== input; i++){
+    input = input = parseFloat(prompt("Type a valid number"))
+}
 
 function convert(number){
 
