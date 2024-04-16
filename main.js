@@ -8,24 +8,13 @@ Design a Web Page that will let the user input any number. Using Javascript Func
 // 8:Octal
 // 16:Hexidacimal
 
-let input = parseFloat(prompt("Type a valid number"));
-
-
 /*
-for (let i = 0; isNaN(input); i++) {
-   input = parseFloat(prompt("Type a valid number"));
-}
-*/
-
-display(input);
-
-function display(number) {
-    document.write(`
-    <p>${number} is equivalent to ${convert(number).toHex} in Hexidacimal <br>
+<p>${number} is equivalent to ${convert(number).toHex} in Hexidacimal <br>
     and ${number} is also equivalent to ${convert(number).toOct} in Octal <br>
     while ${number} is also equivalent to ${convert(number).toBin} in Binary</p>
-    `);
-}
+*/
+
+let input = parseFloat(prompt("Type a valid number"));
 
 function convert(number){
 
@@ -69,3 +58,20 @@ function convert(number){
         toHex:hexadecimal(number)
     }
 }
+
+document.write(`
+<table border="2" align="center">
+    <tr>
+        <td>Decimal</td>
+        <td>Binary</td>
+        <td>Octal</td>
+        <td>Hexidecimal</td>
+    </tr>
+    <tr>
+        <td>${input}</td>
+        <td>${convert(input).toBin}</td>
+        <td>${convert(input).toOct}</td>
+        <td>${convert(input).toHex}</td>
+    </tr>
+</table>
+`);
