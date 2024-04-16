@@ -21,38 +21,51 @@ display(input);
 
 function display(number) {
     document.write(`
-    <p>${number} is equivalent to ${decimalToHexadecimal(number)} in Hexidacimal <br>
-    and ${number} is also equivalent to ${decimalToOctal(number)} in Octal <br>
-    while ${number} is also equivalent to ${decimalToBinary(number)} in Binary</p>
+    <p>${number} is equivalent to ${convert(number).toHex} in Hexidacimal <br>
+    and ${number} is also equivalent to ${convert(number).toOct} in Octal <br>
+    while ${number} is also equivalent to ${convert(number).toBin} in Binary</p>
     `);
 }
 
-function integerDivision(dividend, divisor) {
-    if (dividend < divisor) return 0;
-    return 1 + integerDivision(dividend - divisor, divisor);
-}
+function convert(number){
 
-function decimalToBinary(number) {
-    if (number == 0) return '0';
-    if (number == 1) return '1';
-    const quotient = integerDivision(number, 2);
-    const remainder = number % 2;
-    return decimalToBinary(quotient) + remainder;
-}
+    function numFloor(dividend,divisor){
+        if (dividend < divisor){
+            return 0;
+        }
+        return 1 + numFloor(dividend - divisor, divisor);
+    }
 
-function decimalToOctal(number) {
-    if (number == 0) return '0';
-    if (number < 8) return number.toString();
-    const quotient = integerDivision(number, 8);
-    const remainder = number % 8;
-    return decimalToOctal(quotient) + remainder;
-}
+    function binary(num){
+        if (num == 0) return '0';
+        if (num == 1) return '1';
+        const quotient = numFloor(num, 2);
+        const remainder = num % 2;
+        return binary(quotient) + remainder;
+    }
 
-function decimalToHexadecimal(number) {
-    const hexChars = '0123456789ABCDEF';
-    if (number == 0) return '0';
-    if (number < 16) return hexChars[number];
-    const quotient = integerDivision(number, 16);
-    const remainder = number % 16;
-    return decimalToHexadecimal(quotient) + hexChars[remainder];
+    function octal(num){
+        if (num == 0) return '0';
+        if (num < 8) return num + '';
+        const quotient = numFloor(num, 8);
+        const remainder = num % 8;
+        return octal(quotient) + remainder;
+    }
+
+    function hexadecimal(num){
+        const hexChars = '0123456789ABCDEF';
+        if (num == 0) return '0';
+        if (num < 16) return hexChars[num];
+        const quotient = numFloor(num, 16);
+        const remainder = num % 16;
+        return hexadecimal(quotient) + hexChars[remainder];
+    }
+
+
+
+    return {
+        toBin:binary(number),
+        toOct:octal(number),
+        toHex:hexadecimal(number)
+    }
 }
