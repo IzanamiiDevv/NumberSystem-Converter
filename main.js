@@ -1,27 +1,9 @@
-/*
-Asynchronous activity relative to Javascript Function:
-
-Design a Web Page that will let the user input any number. Using Javascript Function, write the code that will convert the inputted number by the user into different number system such as binary, octal, and hexadecimal. the output may look like what is showing in the video clip. Take a video of yourself while doing the writing the code and executing it. then post it in any social media with the tagline "Asynchronous Activity in Computer Programming: Learning Javascript Function". tag me to check your output
-*/
-
-// 2:binary
-// 8:Octal
-// 16:Hexidacimal
-
-/*
-<p>${number} is equivalent to ${convert(number).toHex} in Hexidacimal <br>
-    and ${number} is also equivalent to ${convert(number).toOct} in Octal <br>
-    while ${number} is also equivalent to ${convert(number).toBin} in Binary</p>
-*/
-
 let input = parseFloat(prompt("Type a valid number"));
 
 function convert(number){
 
     function numFloor(dividend,divisor){
-        if (dividend < divisor){
-            return 0;
-        }
+        if (dividend < divisor) return 0;
         return 1 + numFloor(dividend - divisor, divisor);
     }
 
@@ -60,6 +42,18 @@ function convert(number){
 }
 
 document.write(`
+<div align="center">
+<h1>Asynchronous activity relative to Javascript Function:</h1>
+<p>
+Design a Web Page that will let the user input any number. Using Javascript Function,<br>
+write the code that will convert the inputted number by the user into different number system<br>
+such as binary, octal, and hexadecimal.
+</p>
+<p align="center">
+    ${input} is equivalent to ${convert(input).toHex} in Hexidacimal <br>
+    and ${input} is also equivalent to ${convert(input).toOct} in Octal <br>
+    while ${input} is also equivalent to ${convert(input).toBin} in Binary
+</p>
 <table border="2" align="center">
     <tr>
         <td>Decimal</td>
@@ -74,4 +68,5 @@ document.write(`
         <td>${convert(input).toHex}</td>
     </tr>
 </table>
+</div>
 `);
