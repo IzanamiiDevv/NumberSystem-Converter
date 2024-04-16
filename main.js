@@ -8,11 +8,14 @@ Design a Web Page that will let the user input any number. Using Javascript Func
 // 8:Octal
 // 16:Hexidacimal
 
-let input = NaN;
+let input = parseFloat(prompt("Type a valid number"));
 
+
+/*
 for (let i = 0; isNaN(input); i++) {
    input = parseFloat(prompt("Type a valid number"));
 }
+*/
 
 display(input);
 
