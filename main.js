@@ -21,8 +21,38 @@ display(input);
 
 function display(number) {
     document.write(`
-    <p>${number} is equivalent to ${number.toString(16)} in Hexidacimal <br>
-    and ${number} is also equivalent to ${number.toString(8)} in Octal <br>
-    while ${number} is also equivalent to ${number.toString(2)} in Binary</p>
+    <p>${number} is equivalent to ${decimalToHexadecimal(number)} in Hexidacimal <br>
+    and ${number} is also equivalent to ${decimalToOctal(number)} in Octal <br>
+    while ${number} is also equivalent to ${decimalToBinary(number)} in Binary</p>
     `);
+}
+
+function integerDivision(dividend, divisor) {
+    if (dividend < divisor) return 0;
+    return 1 + integerDivision(dividend - divisor, divisor);
+}
+
+function decimalToBinary(number) {
+    if (number == 0) return '0';
+    if (number == 1) return '1';
+    const quotient = integerDivision(number, 2);
+    const remainder = number % 2;
+    return decimalToBinary(quotient) + remainder;
+}
+
+function decimalToOctal(number) {
+    if (number == 0) return '0';
+    if (number < 8) return number.toString();
+    const quotient = integerDivision(number, 8);
+    const remainder = number % 8;
+    return decimalToOctal(quotient) + remainder;
+}
+
+function decimalToHexadecimal(number) {
+    const hexChars = '0123456789ABCDEF';
+    if (number == 0) return '0';
+    if (number < 16) return hexChars[number];
+    const quotient = integerDivision(number, 16);
+    const remainder = number % 16;
+    return decimalToHexadecimal(quotient) + hexChars[remainder];
 }
