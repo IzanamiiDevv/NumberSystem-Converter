@@ -53,7 +53,7 @@ Design a Web Page that will let the user input any number. Using Javascript Func
 write the code that will convert the inputted number by the user into different number system<br>
 such as binary, octal, and hexadecimal.
 </p>
-<p align="center">
+<p>
     ${input} is equivalent to ${convert(input).toHex} in Hexidacimal <br>
     and ${input} is also equivalent to ${convert(input).toOct} in Octal <br>
     while ${input} is also equivalent to ${convert(input).toBin} in Binary
@@ -74,3 +74,12 @@ such as binary, octal, and hexadecimal.
 </table>
 </div>
 `);
+
+
+const hexChars = '0123456789ABCDEF';
+//hexChars[10] > A
+
+const hexCharss = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+//hexCharss[10] > A
+
+
