@@ -32,11 +32,6 @@ This is a simple web application that allows users to convert a decimal number i
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Acknowledgements
-
-- This project was inspired by [add source of inspiration if any].
-- Special thanks to [mention anyone you'd like to thank for their contributions or inspiration].
-
 ---
 
 Feel free to customize this template to better fit your project's specific details and requirements.
