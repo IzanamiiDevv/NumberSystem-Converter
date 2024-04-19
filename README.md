@@ -1,6 +1,4 @@
-Sure, here's a basic README template for your GitHub project:
 
----
 
 # Number System Converter
 
