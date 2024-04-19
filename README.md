@@ -1,5 +1,3 @@
-
-
 # Number System Converter
 
 This is a simple web application that allows users to convert a decimal number into binary, octal, and hexadecimal representations using JavaScript functions.
