@@ -10,7 +10,6 @@ This is a simple web application that allows users to convert a decimal number i
 ## Technologies Used
 
 - HTML
-- CSS
 - JavaScript
 
 ## How to Use
