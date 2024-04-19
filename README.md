@@ -17,7 +17,7 @@ This is a simple web application that allows users to convert a decimal number i
 1. Clone the repository to your local machine.
 2. Open `index.html` in your web browser.
 3. Enter a decimal number in the input field.
-4. Click the "Convert" button to see the conversion results.
+4. The Result will be display on the Webpage
 
 ## Demo
 
