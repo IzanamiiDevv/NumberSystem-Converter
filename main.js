@@ -74,12 +74,3 @@ such as binary, octal, and hexadecimal.
 </table>
 </div>
 `);
-
-
-const hexChars = '0123456789ABCDEF';
-//hexChars[10] > A
-
-const hexCharss = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
-//hexCharss[10] > A
-
-
